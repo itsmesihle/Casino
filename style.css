@@ -1,0 +1,33 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url(images/md-mahdi-lQpFRPrepQ8-unsplash.jpg);
+  background-size: cover;
+  font-weight: bold;
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  color: goldenrod;
+}
+
+p#message {
+  font-style: italic;
+}
+
+div.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: inherit;
+}
+
+button {
+  background-color: goldenrod;
+  color: #016f32;
+  width: 150px;
+  margin: 5px 5px;
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+}
