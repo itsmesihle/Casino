@@ -1,10 +1,23 @@
-let firstCard = 10;
-let secondCard = 2;
+let firstCard,
+  secondCard = 0;
+/* let secondCard = 2; */
 let newCard = 9;
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
 let isAlive = true;
 let message = "";
+
+//let the computer choose firstCard and secondCard
+function computerPicksCards() {
+  let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
+  firstCard = pickRandomNumber;
+  console.log(firstCard);
+  pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
+  secondCard = pickRandomNumber;
+  console.log(secondCard);
+} //nested scope of firstcard and secondcard prevents displaySum.textContent in startGame() from executing as expected => NaN as opposed to a number...maybe if i nest startGame() into computerPicksCards() then it might work???
+
+computerPicksCards();
 
 let messageAtStart =
   document.getElementById(
