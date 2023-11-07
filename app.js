@@ -22,11 +22,12 @@ function startGame() {
   displayCards.textContent = `Cards: ${firstCard} and ${secondCard}`;
   if (sum <= 20) {
     message = "do you want to draw a new card";
-  } else if ((sum = 21)) {
+  } else if (sum === 21) {
     message = "you have black jack...well done";
     hasBlackJack = true;
   } else {
     message = "you're out of the game";
+    isAlive = false;
   }
   messageAtStart.textContent = message;
 }

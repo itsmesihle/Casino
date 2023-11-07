@@ -12,7 +12,11 @@ h1 {
   color: goldenrod;
 }
 
-p#message {
+hr {
+  display: none;
+}
+
+p#message-at-start {
   font-style: italic;
 }
 
