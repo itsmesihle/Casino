@@ -1,5 +1,5 @@
 let firstCard = 10;
-let secondCard = 11;
+let secondCard = 2;
 let newCard = 9;
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
@@ -41,4 +41,20 @@ function issueNewCard() {
   messageAtStart.textContent = message;
   /* console.log(`new card is ${newCard}`);
   console.log(typeof newCard); */
+  sum += newCard;
+  console.log(sum);
+  displaySum.textContent = `Sum: ${sum}`;
+  displayCards.textContent = `Cards: ${firstCard}, ${secondCard} and ${newCard}`;
+  if (sum <= 20) {
+    message = "do you want to draw a new card?";
+  } else if (sum === 21) {
+    message = "you have black jack...well done";
+    hasBlackJack = true;
+    console.log(hasBlackJack);
+  } else {
+    message = `you're out of the game, your score is ${sum}`;
+    isAlive = false;
+    console.log(message);
+  }
+  messageAtStart.textContent = message;
 }
