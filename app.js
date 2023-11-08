@@ -71,3 +71,21 @@ function issueNewCard() {
   }
   messageAtStart.textContent = message;
 }
+
+//selecting <p> to display new card, and placing in the div
+const selectDiv = document.querySelector("#display-messages");
+const displayForNewCard = document.createElement("p");
+selectDiv.append(displayForNewCard);
+
+//changing value for displayForNewCard
+/* displayForNewCard.textContent = 4;
+console.log(displayForNewCard); */
+
+//picking random number for value of new card
+let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
+displayForNewCard.textContent = `your new card is: ${pickRandomNumber}`;
+
+console.log(selectDiv);
+console.log(pickRandomNumber);
+console.log(displayForNewCard);
+console.log(typeof displayForNewCard);
