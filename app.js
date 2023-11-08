@@ -75,8 +75,8 @@ function issuesNewCard() {
   /* let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
   newCard = pickRandomNumber; */
   message = `your new card is: ${newCard}`;
+  sum += newCard;
+  displaySum.textContent = `Sum: ${sum}`;
   displayForNewCard.textContent = message;
-  console.log(message);
-  console.log(sum);
   //beginning if statements and numeric operations
 }
