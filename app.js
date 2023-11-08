@@ -1,8 +1,9 @@
 let firstCard,
-  secondCard = 0;
+  secondCard,
+  newCard = 0;
 /* let secondCard = 2; */
-let newCard = 9;
-let sum = firstCard + secondCard;
+/* let newCard = 9; */
+let sum = firstCard + secondCard + newCard;
 let hasBlackJack = false;
 let isAlive = true;
 let message = "";
@@ -19,15 +20,8 @@ function computerPicksCards() {
 
 computerPicksCards();
 
-let messageAtStart =
-  document.getElementById(
-    "message-at-start"
-  ); /*stores the message paragraph in html in a js variable */
-/* let displaySum = document.getElementById("display-sum"); */
-let displaySum =
-  document.querySelector(
-    "#display-sum"
-  ); /*querySelector is very similar to getElementById as it does the same job..however much like in CSS you have to indicate if the element is a class (.), ID (#) or normal  */
+let messageAtStart = document.getElementById("message-at-start");
+let displaySum = document.querySelector("#display-sum");
 let displayCards = document.getElementById("display-cards");
 
 function startGame() {
@@ -72,27 +66,19 @@ function issueNewCard() {
   messageAtStart.textContent = message;
 }
 
-//selecting <p> to display new card, and placing in the div
-/* const selectDiv = document.querySelector("#display-messages");
-const displayForNewCard = document.createElement("p");
-selectDiv.append(displayForNewCard); */
-
-//changing value for displayForNewCard
-/* displayForNewCard.textContent = 4;
-console.log(displayForNewCard); */
-
-//picking random number for value of new card
-/* let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
-displayForNewCard.textContent = `your new card is: ${pickRandomNumber}`; */
-
-//put everything in the issueNewCard function
+//put everything in the issuesNewCard function
 function issuesNewCard() {
   const selectDiv = document.querySelector("#display-messages");
   const displayForNewCard = document.createElement("p");
   selectDiv.append(displayForNewCard);
   let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
-  displayForNewCard.textContent = `your new card is: ${pickRandomNumber}`;
+  newCard = pickRandomNumber;
+  message = `your new card is: ${newCard}`;
+  displayForNewCard.textContent = message;
+  console.log(sum);
+  //beginning if statements and numeric operations
   console.log(selectDiv);
+  console.log(typeof sum);
   console.log(pickRandomNumber);
   console.log(displayForNewCard);
   console.log(typeof displayForNewCard);
