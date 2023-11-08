@@ -21,6 +21,10 @@ let messageAtStart = document.getElementById("message-at-start");
 let displaySum = document.querySelector("#display-sum");
 let displayCards = document.getElementById("display-cards");
 
+function endGame() {
+  console.log("your game is done");
+}
+
 function renderGame() {
   displaySum.textContent = `Sum: ${sum}`;
   displayCards.textContent = `Cards: ${cardValues[0]} and ${cardValues[1]}`;
@@ -33,6 +37,7 @@ function renderGame() {
   } else {
     message = "you're out of the game";
     isAlive = false;
+    endGame();
   }
   messageAtStart.textContent = message;
 }
