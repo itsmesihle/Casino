@@ -1,9 +1,7 @@
-let firstCard,
-  secondCard,
-  newCard = 0;
-/* let secondCard = 2; */
-/* let newCard = 9; */
-let sum = firstCard + secondCard + newCard;
+let firstCard = 10;
+let secondCard = 2;
+let newCard = 9;
+let sum = firstCard + secondCard;
 let hasBlackJack = false;
 let isAlive = true;
 let message = "";
@@ -71,8 +69,8 @@ function issuesNewCard() {
   const selectDiv = document.querySelector("#display-messages");
   const displayForNewCard = document.createElement("p");
   selectDiv.append(displayForNewCard);
-  let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
-  newCard = pickRandomNumber;
+  /* let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
+  newCard = pickRandomNumber; */
   message = `your new card is: ${newCard}`;
   displayForNewCard.textContent = message;
   console.log(sum);
