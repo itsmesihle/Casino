@@ -19,6 +19,8 @@ let message = "";
 
 const selectDiv = document.querySelector("#display-messages");
 console.log(selectDiv);
+const selectArea = document.querySelector("#buttons");
+console.log(selectArea);
 const messageAtStart = document.getElementById("message-at-start");
 const displayCards = document.getElementById("display-cards");
 const displaySum = document.querySelector("#display-sum");
@@ -49,7 +51,7 @@ function startGame() {
 }
 
 function addNewIssueButton() {
-  const selectArea = document.querySelector("section");
+  const selectArea = document.querySelector("#btns");
   console.log(selectArea);
 }
 addNewIssueButton;
