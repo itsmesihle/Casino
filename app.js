@@ -17,9 +17,10 @@ let message = "";
   console.log(secondCard);
 } */
 
-let messageAtStart = document.getElementById("message-at-start");
-let displaySum = document.querySelector("#display-sum");
-let displayCards = document.getElementById("display-cards");
+const selectDiv = document.querySelector("#display-messages");
+const messageAtStart = document.getElementById("message-at-start");
+const displayCards = document.getElementById("display-cards");
+const displaySum = document.querySelector("#display-sum");
 
 function endGame() {
   console.log("your game is done");
@@ -46,35 +47,8 @@ function startGame() {
   renderGame();
 }
 
-function issueNewCard() {
-  /* console.log("drawing a new card from deck"); */
-  let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
-  newCard = pickRandomNumber;
-  message = `your new card is ${newCard}`;
-  messageAtStart.textContent = message;
-  /* console.log(`new card is ${newCard}`);
-  console.log(typeof newCard); */
-  sum += newCard;
-  console.log(sum);
-  displaySum.textContent = `Sum: ${sum}`;
-  displayCards.textContent = `Cards: ${firstCard}, ${secondCard} and ${newCard}`;
-  if (sum <= 20) {
-    message = "do you want to draw a new card?";
-  } else if (sum === 21) {
-    message = "you have black jack...well done";
-    hasBlackJack = true;
-    console.log(hasBlackJack);
-  } else {
-    message = `you're out of the game, your score is ${sum}`;
-    isAlive = false;
-    console.log(message);
-  }
-  messageAtStart.textContent = message;
-}
-
 //put everything in the issuesNewCard function
-function issuesNewCard() {
-  const selectDiv = document.querySelector("#display-messages");
+function issueNewCard() {
   const displayForNewCard = document.createElement("p");
   selectDiv.append(displayForNewCard);
   /* let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
@@ -82,6 +56,16 @@ function issuesNewCard() {
   message = `your new card is: ${newCard}`;
   sum += newCard;
   displaySum.textContent = `Sum: ${sum}`;
+  if (sum <= 20) {
+    message = "you don't have blackjack, do you want to draw a new card?";
+  } else if (sum === 21) {
+    message = "you have black jack...well done";
+    hasBlackJack = true;
+    console.log(hasBlackJack);
+  } else {
+    message = "you're out of the game";
+    isAlive = false;
+  }
   displayForNewCard.textContent = message;
   //beginning if statements and numeric operations
 }
