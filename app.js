@@ -18,6 +18,7 @@ let message = "";
 } */
 
 const selectDiv = document.querySelector("#display-messages");
+console.log(selectDiv);
 const messageAtStart = document.getElementById("message-at-start");
 const displayCards = document.getElementById("display-cards");
 const displaySum = document.querySelector("#display-sum");
@@ -46,6 +47,12 @@ function renderGame() {
 function startGame() {
   renderGame();
 }
+
+function addNewIssueButton() {
+  const selectArea = document.querySelector("section");
+  console.log(selectArea);
+}
+addNewIssueButton;
 
 //put everything in the issuesNewCard function
 function issueNewCard() {
