@@ -20,7 +20,7 @@ p#message-at-start {
   font-style: italic;
 }
 
-div.btns {
+div#buttons {
   display: flex;
   flex-direction: column;
   align-items: inherit;
