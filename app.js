@@ -17,13 +17,19 @@ let message = "";
   console.log(secondCard);
 } */
 
+//selecting IDs
 const selectDiv = document.querySelector("#display-messages");
 console.log(selectDiv);
-const selectArea = document.querySelector("#buttons");
-console.log(selectArea);
 const messageAtStart = document.getElementById("message-at-start");
 const displayCards = document.getElementById("display-cards");
 const displaySum = document.querySelector("#display-sum");
+
+//creating new issue button
+const selectArea = document.querySelector("#buttons");
+console.log(selectArea);
+const createNewIssueButton = document.querySelector(".buttons");
+console.log(createNewIssueButton);
+selectArea.append(createNewIssueButton);
 
 function endGame() {
   console.log("your game is done");
@@ -32,6 +38,7 @@ function endGame() {
 function renderGame() {
   displaySum.textContent = `Sum: ${sum}`;
   displayCards.textContent = `Cards: ${cardValues[0]} and ${cardValues[1]}`;
+
   if (sum <= 20) {
     message = "you don't have blackjack, do you want to draw a new card?";
   } else if (sum === 21) {
