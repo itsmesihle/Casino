@@ -41,11 +41,12 @@ function renderGame() {
   console.log(newTouchButton);
   selectIdForButtonsMain.append(newTouchButton);
 
-  //adding id attribute to new issue button
-  /* newTouchButton.innerText = "Do you want a new card?";
+  //adding innertext and id attribute to new issue button
+  newTouchButton.innerText = "Do you want a new card?";
   newTouchButton.setAttribute("id", "buttons");
-  console.log(selectIdForButtonsMain.children); */
-  /*  console.log(createNewIssueButton.classList.contains("buttons")); */
+  console.log(selectIdForButtonsMain.children);
+
+  /*  console.log(createNewIssueButton.classList.contains("buttons"));
 
   //change inner text of create new button
   /*  createNewIssueButton.innerText = "Issue New Card"; */
