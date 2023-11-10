@@ -1,6 +1,6 @@
 let firstCard = 3;
 let secondCard = 8;
-let newCard = 9;
+let newCard = 10;
 let cardValues = [firstCard, secondCard];
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
@@ -38,6 +38,8 @@ function renderGame() {
 
   if (sum <= 20) {
     message = "you don't have blackjack, do you want to draw a new card?";
+
+    //next 3 comments can be put inside a function
     //creating new issue button
     const newTouchButton = document.createElement("button");
     console.log(newTouchButton);
@@ -48,7 +50,13 @@ function renderGame() {
     newTouchButton.setAttribute("id", "buttons");
     console.log(selectIdForButtonsMain.children);
 
-    //
+    //is it the same way to add "onClick" element that it is to add id?
+    newTouchButton.setAttribute("onclick", "newCard()"); //havent tested this code yet
+
+    //add newCard value to sum ~~local sum
+    sum += newCard;
+    console.log(sum);
+    console.log(newCard);
   } else if (sum === 21) {
     message = "you have black jack...well done";
     hasBlackJack = true;
