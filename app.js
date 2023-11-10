@@ -32,7 +32,6 @@ const selectIdForButtonsMain = document.querySelector("#buttons-main");
 const selectIdForButtons = document.querySelector("#buttons");
 
 function createNewCard() {
-  //next 3 comments can be put inside a function
   //creating new issue button
   const newTouchButton = document.createElement("button");
   selectIdForButtonsMain.append(newTouchButton);
@@ -49,6 +48,7 @@ function createNewCard() {
 
 //add newCard value to sum ~~local sum
 function addNewCardToSum() {
+  console.log(sum);
   sum += newCard;
   console.log(sum);
   console.log(newCard);
@@ -80,31 +80,5 @@ function startGame() {
   renderGame();
 }
 
-function addNewIssueButton() {
-  const selectIdForButtonsMain = document.querySelector("#btns");
-  console.log(selectIdForButtonsMain);
-}
-addNewIssueButton;
-
-//put everything in the issuesNewCard function
-function issueNewCard() {
-  const displayForNewCard = document.createElement("p");
-  selectDiv.append(displayForNewCard);
-  /* let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
+/* let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
   newCard = pickRandomNumber; */
-  message = `your new card is: ${newCard}`;
-  sum += newCard;
-  displaySum.textContent = `Sum: ${sum}`;
-  if (sum <= 20) {
-    message = "you don't have blackjack, do you want to draw a new card?";
-  } else if (sum === 21) {
-    message = "you have black jack...well done";
-    hasBlackJack = true;
-    console.log(hasBlackJack);
-  } else {
-    message = "you're out of the game";
-    isAlive = false;
-  }
-  displayForNewCard.textContent = message;
-  //beginning if statements and numeric operations
-}
