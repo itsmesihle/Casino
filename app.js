@@ -36,23 +36,19 @@ function renderGame() {
   displaySum.textContent = `Sum: ${sum}`;
   displayCards.textContent = `Cards: ${cardValues[0]} and ${cardValues[1]}`;
 
-  //creating new issue button
-  const newTouchButton = document.createElement("button");
-  console.log(newTouchButton);
-  selectIdForButtonsMain.append(newTouchButton);
-
-  //adding innertext and id attribute to new issue button
-  newTouchButton.innerText = "Do you want a new card?";
-  newTouchButton.setAttribute("id", "buttons");
-  console.log(selectIdForButtonsMain.children);
-
-  /*  console.log(createNewIssueButton.classList.contains("buttons"));
-
-  //change inner text of create new button
-  /*  createNewIssueButton.innerText = "Issue New Card"; */
-
   if (sum <= 20) {
     message = "you don't have blackjack, do you want to draw a new card?";
+    //creating new issue button
+    const newTouchButton = document.createElement("button");
+    console.log(newTouchButton);
+    selectIdForButtonsMain.append(newTouchButton);
+
+    //adding innertext and id attribute to new issue button
+    newTouchButton.innerText = "Draw a new card";
+    newTouchButton.setAttribute("id", "buttons");
+    console.log(selectIdForButtonsMain.children);
+
+    //
   } else if (sum === 21) {
     message = "you have black jack...well done";
     hasBlackJack = true;
