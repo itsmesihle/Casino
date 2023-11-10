@@ -17,27 +17,38 @@ let message = "";
   console.log(secondCard);
 } */
 
-//selecting IDs
+//selecting IDs from MIDDLE MENU
 const selectDiv = document.querySelector("#display-messages");
-console.log(selectDiv);
 const messageAtStart = document.getElementById("message-at-start");
 const displayCards = document.getElementById("display-cards");
 const displaySum = document.querySelector("#display-sum");
 
-//creating new issue button
-const selectArea = document.querySelector("#buttons");
-console.log(selectArea);
-const createNewIssueButton = document.querySelector(".buttons");
-console.log(createNewIssueButton);
-selectArea.append(createNewIssueButton);
-
-function endGame() {
+/* function endGame() {
   console.log("your game is done");
-}
+} */
+
+//selecting IDs from buttons section
+const selectIdForButtonsMain = document.querySelector("#buttons-main");
+const selectIdForButtons = document.querySelector("#buttons");
 
 function renderGame() {
+  //before anything happens, this is displayed
   displaySum.textContent = `Sum: ${sum}`;
   displayCards.textContent = `Cards: ${cardValues[0]} and ${cardValues[1]}`;
+
+  //creating new issue button
+  const newTouchButton = document.createElement("button");
+  console.log(newTouchButton);
+  selectIdForButtonsMain.append(newTouchButton);
+
+  //adding id attribute to new issue button
+  /* newTouchButton.innerText = "Do you want a new card?";
+  newTouchButton.setAttribute("id", "buttons");
+  console.log(selectIdForButtonsMain.children); */
+  /*  console.log(createNewIssueButton.classList.contains("buttons")); */
+
+  //change inner text of create new button
+  /*  createNewIssueButton.innerText = "Issue New Card"; */
 
   if (sum <= 20) {
     message = "you don't have blackjack, do you want to draw a new card?";
@@ -58,8 +69,8 @@ function startGame() {
 }
 
 function addNewIssueButton() {
-  const selectArea = document.querySelector("#btns");
-  console.log(selectArea);
+  const selectIdForButtonsMain = document.querySelector("#btns");
+  console.log(selectIdForButtonsMain);
 }
 addNewIssueButton;
 

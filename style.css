@@ -20,13 +20,13 @@ p#message-at-start {
   font-style: italic;
 }
 
-div#buttons {
+div#buttons-main {
   display: flex;
   flex-direction: column;
   align-items: inherit;
 }
 
-button {
+#buttons {
   background-color: goldenrod;
   color: #016f32;
   width: 150px;
