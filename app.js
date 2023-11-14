@@ -6,6 +6,7 @@ let sum = firstCard + secondCard;
 let hasBlackJack = false;
 let isAlive = true;
 let message = "";
+const INSERT = "blackjack";
 
 //let the computer randomly choose firstCard and secondCard
 /* function computerPicksCards() {
@@ -60,13 +61,13 @@ function renderGame() {
   displayCards.textContent = `Cards: ${cardValues[0]} and ${cardValues[1]}`;
 
   if (sum <= 20) {
-    message = "you don't have blackjack, do you want to draw a new card?";
+    message = `you don't have ${INSERT}, do you want to draw a new card?`;
     createNewCard();
     addNewCardToSum();
     //look above for the functions
   } else if (sum === 21) {
-    message = "you have black jack...well done";
-    hasBlackJack = true;
+    message = `you have ${INSERT}...well done`;
+    /* hasBlackJack = true; */
     console.log(hasBlackJack);
   } else {
     message = "you're out of the game";
