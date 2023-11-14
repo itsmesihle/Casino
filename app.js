@@ -1,6 +1,6 @@
 let firstCard = 3;
 let secondCard = 8;
-let newCard = 10;
+let newCard = 0;
 let cardValues = [firstCard, secondCard];
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
@@ -31,6 +31,12 @@ const displaySum = document.querySelector("#display-sum");
 //selecting IDs from buttons section
 const selectIdForButtonsMain = document.querySelector("#buttons-main");
 const selectIdForButtons = document.querySelector("#buttons");
+
+function pickNewCardNumber() {
+  return 1 + Math.round(Math.random() * 10); //returns a number from 1 to 11
+}
+/* console.log(pickNewCardNumber());
+console.log(typeof pickNewCardNumber()); */
 
 function createNewCard() {
   //creating new issue button
