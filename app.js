@@ -7,6 +7,7 @@ let hasBlackJack = false;
 let isAlive = true;
 let message = "";
 const INSERT = "blackjack";
+console.log(cardValues);
 
 //let the computer randomly choose firstCard and secondCard
 /* function computerPicksCards() {
@@ -24,10 +25,6 @@ const messageAtStart = document.getElementById("message-at-start");
 const displayCards = document.getElementById("display-cards");
 const displaySum = document.querySelector("#display-sum");
 
-/* function endGame() {
-  console.log("your game is done");
-} */
-
 //selecting IDs from buttons section
 const selectIdForButtonsMain = document.querySelector("#buttons-main");
 const selectIdForButtons = document.querySelector("#buttons");
@@ -44,28 +41,32 @@ function createNewCard() {
   //adding innertext and id attribute to new issue button
   newTouchButton.innerText = "Draw a new card";
   newTouchButton.setAttribute("id", "buttons");
-  console.log(selectIdForButtonsMain.children);
+  /*  console.log(selectIdForButtonsMain.children); */
 
   //is it the same way to add "onClick" element that it is to add id?
   newTouchButton.setAttribute("onclick", "addNewCardToSum()"); //havent tested this code yet
-  console.log(newTouchButton);
+  /* console.log(newTouchButton); */
 }
 
 //add newCard value to sum ~~local sum
 function addNewCardToSum() {
-  console.log(`old sum is ${sum}`);
+  /* console.log(`old sum is ${sum}`); */
   newCard = pickNewCardNumber();
   sum += newCard;
-  console.log("new card is: ", newCard);
+  /* console.log("new card is: ", newCard); */
   console.log(`new sum is ${sum}`);
 }
-
 addNewCardToSum();
+
+function endGame() {
+  console.log("your game is done");
+}
 
 function renderGame() {
   //before anything happens, this is displayed
   displaySum.textContent = `Sum: ${sum}`;
-  displayCards.textContent = `Cards: ${cardValues[0]} and ${cardValues[1]}`;
+  displayCards.textContent = `Cards: ${cardValues}`;
+  console.log(`this `, sum, `is under renderGame();`);
 
   if (sum <= 20) {
     message = `you don't have ${INSERT}, do you want to draw a new card?`;
@@ -75,7 +76,7 @@ function renderGame() {
   } else if (sum === 21) {
     message = `you have ${INSERT}...well done`;
     /* hasBlackJack = true; */
-    console.log(hasBlackJack);
+    /* console.log(hasBlackJack); */
   } else {
     message = "you're out of the game";
     isAlive = false;
