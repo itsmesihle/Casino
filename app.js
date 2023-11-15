@@ -1,7 +1,7 @@
 let firstCard = 3;
 let secondCard = 8;
 let newCard = 0;
-let cardValues = [firstCard, secondCard];
+let cardValues = [firstCard, secondCard, newCard];
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
 let isAlive = true;
@@ -33,10 +33,8 @@ const selectIdForButtonsMain = document.querySelector("#buttons-main");
 const selectIdForButtons = document.querySelector("#buttons");
 
 function pickNewCardNumber() {
-  return 1 + Math.round(Math.random() * 10); //returns a number from 1 to 11
+  return 1 + Math.round(Math.random() * 10);
 }
-/* console.log(pickNewCardNumber());
-console.log(typeof pickNewCardNumber()); */
 
 function createNewCard() {
   //creating new issue button
@@ -55,11 +53,14 @@ function createNewCard() {
 
 //add newCard value to sum ~~local sum
 function addNewCardToSum() {
-  console.log(sum);
+  console.log(`old sum is ${sum}`);
+  newCard = pickNewCardNumber();
   sum += newCard;
-  console.log(sum);
-  console.log(newCard);
+  console.log("new card is: ", newCard);
+  console.log(`new sum is ${sum}`);
 }
+
+addNewCardToSum();
 
 function renderGame() {
   //before anything happens, this is displayed
@@ -86,6 +87,3 @@ function renderGame() {
 function startGame() {
   renderGame();
 }
-
-/* let pickRandomNumber = Number(1 + Math.round(Math.random() * 10));
-  newCard = pickRandomNumber; */
