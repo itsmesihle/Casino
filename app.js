@@ -1,13 +1,7 @@
-let firstCard = 3;
-let secondCard = 8;
-let newCard = 0;
-let cardValues = [firstCard, secondCard, newCard];
-let sum = firstCard + secondCard;
 let hasBlackJack = false;
 let isAlive = true;
 let message = "";
 const INSERT = "blackjack";
-console.log(cardValues);
 
 //let the computer randomly choose firstCard and secondCard
 /* function computerPicksCards() {
@@ -33,6 +27,7 @@ function pickNewCardNumber() {
   return 1 + Math.round(Math.random() * 10);
 }
 
+//createNewCard() works beautifully
 function createNewCard() {
   //creating new issue button
   const newTouchButton = document.createElement("button");
@@ -43,36 +38,50 @@ function createNewCard() {
   newTouchButton.setAttribute("id", "buttons");
   /*  console.log(selectIdForButtonsMain.children); */
 
-  //is it the same way to add "onClick" element that it is to add id?
-  newTouchButton.setAttribute("onclick", "addNewCardToSum()"); //havent tested this code yet
-  /* console.log(newTouchButton); */
+  //is it the same way to add "onClick" element that it is to add id? -
+  newTouchButton.setAttribute("onclick", "addNewCardToSum()");
 }
 
 //add newCard value to sum ~~local sum
 function addNewCardToSum() {
   /* console.log(`old sum is ${sum}`); */
-  newCard = pickNewCardNumber();
+  /*  newCard = pickNewCardNumber();
+  console.log(newCard);
   sum += newCard;
+  console.log(sum); */
+  /* sum += newCard; */
   /* console.log("new card is: ", newCard); */
-  console.log(`new sum is ${sum}`);
 }
-addNewCardToSum();
 
 function endGame() {
-  console.log("your game is done");
+  alert("your game is done");
+  /*  console.log("your game is done"); */
 }
 
 function renderGame() {
+  //declaring local scope variables
+  let firstCard = 3;
+  let secondCard = 8;
+  let newCard = 0;
+  let cardValues = [firstCard, secondCard, newCard];
+  let sum = firstCard + secondCard;
+
   //before anything happens, this is displayed
-  displaySum.textContent = `Sum: ${sum}`;
+  displaySum.textContent = `Sum: ${sum} + ${newCard}`;
   displayCards.textContent = `Cards: ${cardValues}`;
   console.log(`this `, sum, `is under renderGame();`);
 
   if (sum <= 20) {
     message = `you don't have ${INSERT}, do you want to draw a new card?`;
     createNewCard();
-    addNewCardToSum();
+    /* addNewCardToSum(); */
     //look above for the functions
+    messageAtStart.textContent = message;
+    newCard = pickNewCardNumber();
+    console.log("new card is:", newCard);
+    sum += newCard;
+    console.log(`new sum is ${sum}`);
+    //
   } else if (sum === 21) {
     message = `you have ${INSERT}...well done`;
     /* hasBlackJack = true; */
@@ -82,7 +91,6 @@ function renderGame() {
     isAlive = false;
     endGame();
   }
-  messageAtStart.textContent = message;
 }
 
 function startGame() {
